@@ -25,7 +25,7 @@ class ListItem extends Component{
     render(){
         return(
             <TouchableWithoutFeedback
-                onPress={()=>this.props.selectLibrary(this.props.library.id)}>
+                onPress={()=>this.props.LibrarySelectedAction(this.props.library.id)}>
                 <View>
                     <CardSection>
                         <Text style={styles.titleStyle}>{this.props.library.title}</Text>
@@ -46,7 +46,7 @@ const styles = {
 
 const mapStateToProps = (state,ownProps) => {
 
-    const expanded = state.selectedLibraryId === ownProps.library.id;
+    const expanded = state.AppState_SelectedLibraryId === ownProps.library.id;
 
     return { expanded: expanded };
 }
